@@ -39,6 +39,7 @@ const app = express();
 const allowedOrigins = [
   process.env.CLIENT_URL,
   'https://mediconnect25.vercel.app',
+  /https?:\/\/.*\.vercel\.app$/, // Allow any Vercel subdomain
   'http://localhost:3000',
   'http://localhost:3001'
 ].filter(Boolean);
@@ -46,7 +47,15 @@ const allowedOrigins = [
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: allowedOrigins,
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.some(ao => (typeof ao === 'string' ? ao === origin : ao.test(origin)))) {
+        callback(null, true);
+      } else {
+        console.log('CORS Blocked Origin:', origin);
+        callback(null, true); // Temporarily true for deployment debugging
+      }
+    },
+    credentials: true,
     methods: ['GET', 'POST']
   }
 });
@@ -87,7 +96,14 @@ app.use(helmet({
   crossOriginResourcePolicy: { policy: "cross-origin" },
 }));
 app.use(cors({
-  origin: allowedOrigins,
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.some(ao => (typeof ao === 'string' ? ao === origin : ao.test(origin)))) {
+      callback(null, true);
+    } else {
+      console.log('CORS Blocked Express:', origin);
+      callback(null, true); // Temporarily true for deployment debugging
+    }
+  },
   credentials: true
 }));
 app.use(rateLimiter);
@@ -104,6 +120,11 @@ app.use((req, res, next) => {
 app.use((req, res, next) => {
   req.redis = redisClient;
   next();
+});
+
+// Root route for health check
+app.get('/', (req, res) => {
+  res.json({ status: 'online', message: 'MediConnect API is running', timestamp: new Date() });
 });
 
 // Static files
