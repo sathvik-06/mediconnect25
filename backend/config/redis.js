@@ -1,11 +1,23 @@
 // config/redis.js
 import redis from 'redis';
 
+let redisUrl = process.env.REDIS_URL;
+
+// Sanitize URL: Remove common command-line prefixes if user accidentally pasted them
+if (redisUrl && redisUrl.includes('-u ')) {
+  redisUrl = redisUrl.split('-u ')[1].split(' ')[0];
+}
+
+// Support for rediss:// protocol and ensuring TLS for cloud providers
+const isSecure = redisUrl && (redisUrl.startsWith('rediss://') || process.env.NODE_ENV === 'production');
+
 const client = redis.createClient({
-  url: process.env.REDIS_URL,
+  url: redisUrl,
   socket: {
-    connectTimeout: 2000,
-    reconnectStrategy: false
+    tls: isSecure,
+    rejectUnauthorized: false, // Often needed for cloud providers
+    connectTimeout: 5000,
+    reconnectStrategy: (retries) => Math.min(retries * 50, 2000)
   }
 });
 
