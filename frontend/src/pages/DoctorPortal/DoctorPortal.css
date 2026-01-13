@@ -1,0 +1,11 @@
+.doctor-portal {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+}
+
+.doctor-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}

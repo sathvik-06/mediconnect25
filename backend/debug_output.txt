@@ -1,0 +1,8 @@
+--- DOCTORS LIST ---
+{"success":true,"doctors":[{"availability":{"workingHours":{"start":"09:00","end":"17:00"},"workingDays":["monday","tuesday","wednesday","thursday","friday","saturday","sunday"]},"rating":{"average":0,"count":0,"reviews":[]},"preferences":{"notifications":{"email":true,"sms":false,"push":true},"language":"en"},"_id":"69342c6b800106e50f34e17b","specialization":"Orthopedic","experience":3,"licenseNumber":"123456","consultationFee":200,"isVerified":true,"isAvailable":true,"name":"ABCD","email":"abcd@gmail.com","role":"doctor","phone":"9989882422","isActive":true,"qualifications":[],"createdAt":"2025-12-06T13:15:23.344Z","updatedAt":"2025-12-06T13:38:52.069Z","lastLogin":"2025-12-06T13:38:52.066Z"}],"total":1,"page":1,"pages":1}
+
+First Doctor ID found: 69342c6b800106e50f34e17b
+
+--- INDIVIDUAL DOCTOR ---
+Status: 200
+{"success":true,"doctor":{"availability":{"workingHours":{"start":"09:00","end":"17:00"},"workingDays":["monday","tuesday","wednesday","thursday","friday","saturday","sunday"]},"rating":{"average":0,"count":0,"reviews":[]},"preferences":{"notifications":{"email":true,"sms":false,"push":true},"language":"en"},"_id":"69342c6b800106e50f34e17b","specialization":"Orthopedic","experience":3,"licenseNumber":"123456","consultationFee":200,"isVerified":true,"isAvailable":true,"name":"ABCD","email":"abcd@gmail.com","role":"doctor","phone":"9989882422","isActive":true,"qualifications":[],"createdAt":"2025-12-06T13:15:23.344Z","updatedAt":"2025-12-06T13:38:52.069Z","lastLogin":"2025-12-06T13:38:52.066Z"}}

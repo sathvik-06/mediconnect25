@@ -1,0 +1,88 @@
+/* src/components/patient/MedicalHistory/MedicalHistory.css */
+.medical-history {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.medical-header {
+  margin-bottom: 30px;
+}
+
+.medical-header h1 {
+  color: #1f2937;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.medical-header p {
+  color: #6b7280;
+  font-size: 16px;
+  margin: 0;
+}
+
+.medical-tabs {
+  display: flex;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #6b7280;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tab-button:hover {
+  background: #f9fafb;
+  color: #374151;
+}
+
+.tab-button.active {
+  color: #2563eb;
+  background: #f0f9ff;
+}
+
+.tab-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #2563eb;
+}
+
+.tab-count {
+  background: #e5e7eb;
+  color: #374151;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tab-button.active .tab-count {
+  background: #2563eb;
+  color: white;
+}
+
+.tab-content {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}

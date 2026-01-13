@@ -1,0 +1,34 @@
+/* src/components/patient/PrescriptionUpload/PrescriptionList.css */
+.prescription-list {
+  margin-top: 20px;
+}
+
+.prescriptions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.empty-prescriptions {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.empty-prescriptions h3 {
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.empty-prescriptions p {
+  color: #6b7280;
+  margin: 0;
+  font-size: 14px;
+}

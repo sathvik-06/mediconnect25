@@ -1,0 +1,168 @@
+/* src/components/patient/MedicalHistory/AppointmentHistory.css */
+.appointment-history h3 {
+  color: #1f2937;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 10px;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.history-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.history-item:hover {
+  border-color: #2563eb;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+.history-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.doctor-info h4 {
+  margin: 0 0 5px 0;
+  color: #1f2937;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.specialty {
+  color: #2563eb;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+  font-size: 14px;
+}
+
+.date {
+  color: #6b7280;
+  margin: 0;
+  font-size: 14px;
+}
+
+.appointment-details {
+  text-align: right;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.diagnosis {
+  margin: 8px 0 0 0;
+  color: #374151;
+  font-size: 14px;
+  max-width: 300px;
+}
+
+.appointment-notes {
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 6px;
+  border-left: 3px solid #2563eb;
+  font-size: 14px;
+  color: #374151;
+}
+
+.empty-history {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.empty-history h3 {
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.empty-history p {
+  color: #6b7280;
+  margin: 0;
+}
+
+.video-call-action {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.btn-join-video {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-join-video:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+}
+
+.btn-join-video:active {
+  transform: translateY(0);
+}
+
+.appointment-actions {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-cancel {
+  background: transparent;
+  border: 1px solid #dc2626;
+  color: #dc2626;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background: #dc2626;
+  color: white;
+}
+
+.btn-cancel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.time-slot {
+  color: #6b7280;
+  font-size: 13px;
+  margin: 4px 0;
+}

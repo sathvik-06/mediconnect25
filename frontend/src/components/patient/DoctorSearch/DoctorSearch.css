@@ -1,0 +1,20 @@
+/* src/components/patient/DoctorSearch/DoctorSearch.css */
+.doctor-search {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.search-header {
+  margin-bottom: 30px;
+}
+
+.search-header h1 {
+  color: #1f2937;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.search-header p {
+  color: #6b7280;
+  font-size: 16px;
+}

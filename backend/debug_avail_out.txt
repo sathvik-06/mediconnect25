@@ -1,0 +1,28 @@
+--- START ---
+Connected to MongoDB
+Checking availability for Doctor: 69342c6b800106e50f34e17b on 2025-12-07
+Doctor Name: ABCD
+Working Days: ["monday","tuesday","wednesday","thursday","friday","saturday","sunday"]
+Working Hours: {"start":"09:00","end":"17:00"}
+Requested Day: sunday
+Doctor works on this day.
+Booked Appointments: 0
+Booked Slots: []
+Generated Slots Count: 16
+--- Final Map ---
+09:00: AVAILABLE
+09:30: AVAILABLE
+10:00: AVAILABLE
+10:30: AVAILABLE
+11:00: AVAILABLE
+11:30: AVAILABLE
+12:00: AVAILABLE
+12:30: AVAILABLE
+13:00: AVAILABLE
+13:30: AVAILABLE
+14:00: AVAILABLE
+14:30: AVAILABLE
+15:00: AVAILABLE
+15:30: AVAILABLE
+16:00: AVAILABLE
+16:30: AVAILABLE

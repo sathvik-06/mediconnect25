@@ -1,0 +1,86 @@
+/* src/components/patient/PrescriptionUpload/PrescriptionUpload.css */
+.prescription-upload {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.upload-header {
+  margin-bottom: 30px;
+}
+
+.upload-header h1 {
+  color: #1f2937;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.upload-header p {
+  color: #6b7280;
+  font-size: 16px;
+  margin: 0;
+}
+
+.prescriptions-section {
+  margin-top: 40px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.section-header h2 {
+  color: #1f2937;
+  margin: 0;
+}
+
+.prescription-tabs {
+  display: flex;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.tab-button {
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.tab-button:hover {
+  background: #f9fafb;
+  color: #374151;
+}
+
+.tab-button.active {
+  background: #2563eb;
+  color: white;
+}
+
+.tab-count {
+  background: #e5e7eb;
+  color: #374151;
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tab-button.active .tab-count {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+}

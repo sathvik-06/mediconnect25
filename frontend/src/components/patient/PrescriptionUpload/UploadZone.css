@@ -1,0 +1,125 @@
+/* src/components/patient/PrescriptionUpload/UploadZone.css */
+.upload-zone {
+  margin-bottom: 30px;
+}
+
+.dropzone {
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 60px 40px;
+  text-align: center;
+  background: #fafafa;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.dropzone:hover {
+  border-color: #2563eb;
+  background: #f0f9ff;
+}
+
+.dropzone.active {
+  border-color: #2563eb;
+  background: #e0f2fe;
+  border-style: solid;
+}
+
+.dropzone.uploading {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.dropzone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.upload-icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.dropzone h3 {
+  color: #1f2937;
+  margin: 0 0 8px 0;
+  font-size: 20px;
+}
+
+.dropzone p {
+  color: #6b7280;
+  margin: 0 0 15px 0;
+  font-size: 14px;
+}
+
+.file-types {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.file-types span {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.uploading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.uploading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e5e7eb;
+  border-top: 3px solid #2563eb;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.uploading-content h3 {
+  color: #1f2937;
+  margin: 0;
+}
+
+.uploading-content p {
+  color: #6b7280;
+  margin: 0;
+  font-size: 14px;
+}
+
+.upload-tips {
+  background: #f0f9ff;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #2563eb;
+  margin-top: 20px;
+}
+
+.upload-tips h4 {
+  color: #1e40af;
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+
+.upload-tips ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #374151;
+}
+
+.upload-tips li {
+  margin-bottom: 5px;
+  font-size: 13px;
+  line-height: 1.4;
+}

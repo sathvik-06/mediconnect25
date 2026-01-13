@@ -1,0 +1,239 @@
+/* src/components/doctor/Queue/DoctorQueue.css */
+.doctor-queue {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.queue-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.queue-header h2 {
+    margin: 0;
+    color: #1a1a1a;
+}
+
+.queue-count {
+    background: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.empty-queue {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.empty-icon {
+    font-size: 64px;
+    margin-bottom: 16px;
+}
+
+.empty-queue h3 {
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.empty-queue p {
+    color: #999;
+}
+
+.queue-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.queue-item {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 60px 1fr 200px 200px 100px;
+    gap: 20px;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.queue-item:hover {
+    border-color: #4CAF50;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.1);
+}
+
+.queue-item.in-progress {
+    border-color: #FF9800;
+    background: #FFF8E1;
+}
+
+.queue-position {
+    font-size: 32px;
+    font-weight: bold;
+    color: #4CAF50;
+    text-align: center;
+}
+
+.patient-info h3 {
+    margin: 0 0 8px 0;
+    color: #1a1a1a;
+    font-size: 18px;
+}
+
+.patient-contact,
+.patient-phone {
+    margin: 4px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.symptoms {
+    margin-top: 8px;
+    padding: 8px;
+    background: #f0f7ff;
+    border-left: 3px solid #2196F3;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.symptoms strong {
+    color: #2196F3;
+}
+
+.appointment-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.detail-item .label {
+    font-size: 12px;
+    color: #999;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.detail-item .value {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.queue-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.queue-actions .btn {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.queue-actions .btn-primary {
+    background: #4CAF50;
+    color: white;
+}
+
+.queue-actions .btn-primary:hover:not(:disabled) {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.queue-actions .btn-success {
+    background: #2196F3;
+    color: white;
+}
+
+.queue-actions .btn-success:hover:not(:disabled) {
+    background: #1976D2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+}
+
+.queue-actions .btn-outline {
+    background: white;
+    color: #f44336;
+    border: 2px solid #f44336;
+}
+
+.queue-actions .btn-outline:hover:not(:disabled) {
+    background: #f44336;
+    color: white;
+}
+
+.queue-actions .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.status-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.checked-in {
+    background: #E8F5E9;
+    color: #4CAF50;
+}
+
+.status-badge.in-progress {
+    background: #FFF3E0;
+    color: #FF9800;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+@media (max-width: 1024px) {
+    .queue-item {
+        grid-template-columns: 50px 1fr;
+        gap: 16px;
+    }
+
+    .queue-position {
+        font-size: 24px;
+    }
+
+    .appointment-details,
+    .queue-actions {
+        grid-column: 1 / -1;
+    }
+
+    .status-badge {
+        position: static;
+        margin-top: 12px;
+        display: inline-block;
+    }
+}

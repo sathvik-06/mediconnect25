@@ -1,0 +1,21 @@
+/* src/components/auth/Login/LoginForm.css */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.login-btn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.login-btn:disabled:hover {
+  background-color: #9ca3af;
+}

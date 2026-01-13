@@ -1,0 +1,57 @@
+/* src/components/patient/Reminders/ReminderList.css */
+.reminder-list {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f3f4f6;
+}
+
+.list-header h3 {
+  color: #1f2937;
+  margin: 0;
+}
+
+.reminder-count {
+  background: #2563eb;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.reminders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+}
+
+.empty-reminders {
+  text-align: center;
+  padding: 40px 20px;
+  color: #6b7280;
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.empty-reminders h4 {
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.empty-reminders p {
+  margin: 0;
+  font-size: 14px;
+}

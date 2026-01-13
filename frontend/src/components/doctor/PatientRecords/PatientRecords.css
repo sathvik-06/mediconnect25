@@ -1,0 +1,94 @@
+.patient-records {
+    padding: 20px;
+    background: #f8f9fa;
+    min-height: calc(100vh - 80px);
+}
+
+.patient-records h2 {
+    color: #2c3e50;
+    margin-bottom: 24px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.records-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.patients-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.patients-table th {
+    text-align: left;
+    padding: 16px;
+    color: #7f8c8d;
+    font-weight: 600;
+    font-size: 14px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.patients-table td {
+    padding: 16px;
+    border-bottom: 1px solid #edf2f7;
+    color: #2c3e50;
+    vertical-align: middle;
+}
+
+.patient-info {
+    font-weight: 500;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contact-info .email {
+    color: #7f8c8d;
+    font-size: 13px;
+}
+
+.no-data {
+    text-align: center;
+    color: #7f8c8d;
+    padding: 40px;
+    font-size: 16px;
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    color: #3498db;
+}
+
+.error-message {
+    padding: 16px;
+    background: #fee2e2;
+    color: #dc2626;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.view-history-btn {
+    padding: 6px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.2s;
+}
+
+.view-history-btn:hover {
+    background-color: #0056b3;
+}

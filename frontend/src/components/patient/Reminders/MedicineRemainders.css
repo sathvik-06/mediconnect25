@@ -1,0 +1,71 @@
+/* src/components/patient/Reminders/MedicineReminders.css */
+.medicine-reminders {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.reminders-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.header-left h1 {
+  color: #1f2937;
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.header-left p {
+  color: #6b7280;
+  font-size: 16px;
+  margin: 0;
+}
+
+.reminders-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.reminders-stats .stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.reminders-stats .stat-icon {
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  background: #f3f4f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reminders-stats .stat-info h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0 0 5px 0;
+}
+
+.reminders-stats .stat-info p {
+  color: #6b7280;
+  margin: 0;
+  font-size: 14px;
+}
+
+.reminders-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}

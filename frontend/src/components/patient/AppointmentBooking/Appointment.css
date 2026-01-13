@@ -1,0 +1,126 @@
+/* src/components/patient/AppointmentBooking/AppointmentBooking.css */
+.appointment-booking {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.booking-header {
+  margin-bottom: 30px;
+}
+
+.booking-header h1 {
+  color: #1f2937;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.doctor-preview {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.doctor-avatar {
+  width: 60px;
+  height: 60px;
+  background: #f3f4f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.doctor-info h3 {
+  margin: 0 0 5px 0;
+  color: #1f2937;
+}
+
+.doctor-info p {
+  margin: 0;
+  color: #6b7280;
+}
+
+.booking-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.booking-steps::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e5e7eb;
+  z-index: 1;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.step.active .step-number {
+  background: #2563eb;
+  color: white;
+}
+
+.step span {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.step.active span {
+  color: #2563eb;
+}
+
+.booking-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.error-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.error-state h3 {
+  color: #dc2626;
+  margin-bottom: 10px;
+}
+
+.error-state p {
+  color: #6b7280;
+  margin-bottom: 20px;
+}

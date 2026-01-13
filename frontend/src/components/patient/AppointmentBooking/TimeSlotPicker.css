@@ -1,0 +1,138 @@
+/* src/components/patient/AppointmentBooking/TimeSlotPicker.css */
+.time-slot-picker {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.picker-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.picker-header h3 {
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.picker-header p {
+  color: #6b7280;
+  margin: 0;
+}
+
+.date-selection {
+  margin-bottom: 30px;
+}
+
+.date-selection h4 {
+  color: #374151;
+  margin-bottom: 15px;
+}
+
+.date-options {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.date-option {
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.date-option:hover {
+  border-color: #2563eb;
+}
+
+.date-option.selected {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.time-selection {
+  margin-bottom: 30px;
+}
+
+.time-selection h4 {
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.time-slot {
+  padding: 12px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.time-slot:hover:not(.unavailable) {
+  border-color: #2563eb;
+  background: #f0f9ff;
+}
+
+.time-slot.selected {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+
+.time-slot.unavailable {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+  border-color: #e5e7eb;
+}
+
+.slot-status {
+  font-size: 10px;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.time-slot.selected .slot-status {
+  color: white;
+}
+
+.picker-actions {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.selected-slot-info {
+  background: #f0f9ff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #bfdbfe;
+}
+
+.selected-slot-info h4 {
+  color: #1e40af;
+  margin-bottom: 10px;
+}
+
+.selected-slot-info p {
+  margin: 0;
+  color: #374151;
+  line-height: 1.6;
+}

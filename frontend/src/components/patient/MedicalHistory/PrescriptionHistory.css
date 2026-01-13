@@ -1,0 +1,144 @@
+/* src/components/patient/MedicalHistory/PrescriptionHistory.css */
+.prescription-history h3 {
+  color: #1f2937;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 10px;
+}
+
+.prescriptions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.prescription-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.prescription-card:hover {
+  border-color: #2563eb;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+.prescription-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.prescription-info h4 {
+  margin: 0 0 5px 0;
+  color: #1f2937;
+}
+
+.date {
+  color: #6b7280;
+  margin: 0 0 8px 0;
+  font-size: 14px;
+}
+
+.diagnosis {
+  color: #374151;
+  margin: 0;
+  font-size: 14px;
+}
+
+.prescription-status .status {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status.active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.completed {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status.expired {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.medicines-list {
+  margin-bottom: 15px;
+}
+
+.medicines-list h5 {
+  color: #374151;
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+
+.medicine-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 14px;
+}
+
+.medicine-name {
+  font-weight: 500;
+  color: #1f2937;
+  flex: 2;
+}
+
+.medicine-dosage {
+  color: #6b7280;
+  flex: 2;
+}
+
+.medicine-notes {
+  color: #dc2626;
+  flex: 1;
+  text-align: right;
+  font-size: 12px;
+}
+
+.prescription-notes {
+  background: #f0f9ff;
+  padding: 10px;
+  border-radius: 6px;
+  border-left: 3px solid #2563eb;
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 15px;
+}
+
+.prescription-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.empty-prescriptions {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.empty-prescriptions .empty-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.empty-prescriptions h3 {
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.empty-prescriptions p {
+  color: #6b7280;
+  margin: 0;
+}

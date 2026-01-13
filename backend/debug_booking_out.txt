@@ -1,0 +1,26 @@
+--- START DEBUG BOOKING ---
+Connected to MongoDB
+Doctor Found: 69342c6b800106e50f34e17b
+Patient Found: 691a946e17d98d1f190d029b (Jane Smith)
+Calling bookAppointment controller...
+Response Status: 201
+Response JSON: {
+  "success": true,
+  "message": "Appointment booked successfully",
+  "appointment": {
+    "patient": "691a946e17d98d1f190d029b",
+    "doctor": "69342c6b800106e50f34e17b",
+    "date": "2025-12-07T00:00:00.000Z",
+    "timeSlot": "09:00",
+    "status": "scheduled",
+    "type": "in-person",
+    "symptoms": "Debug test symptoms",
+    "consultationFee": 200,
+    "paymentStatus": "pending",
+    "reminderSent": false,
+    "_id": "69344045f28d67ece9af005d",
+    "createdAt": "2025-12-06T14:40:05.451Z",
+    "updatedAt": "2025-12-06T14:40:05.451Z",
+    "__v": 0
+  }
+}
