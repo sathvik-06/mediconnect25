@@ -36,6 +36,10 @@ import errorHandler from './middleware/errorHandler.js';
 import rateLimiter from './middleware/rateLimit.js';
 
 const app = express();
+
+// Trust proxy for Railway/Cloud deployments
+app.set('trust proxy', 1);
+
 const allowedOrigins = [
   process.env.CLIENT_URL,
   'https://mediconnect25.vercel.app',
@@ -122,9 +126,14 @@ app.use((req, res, next) => {
   next();
 });
 
-// Root route for health check
+// Health check route
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'online', message: 'MediConnect API is healthy', timestamp: new Date() });
+});
+
+// Root welcome
 app.get('/', (req, res) => {
-  res.json({ status: 'online', message: 'MediConnect API is running', timestamp: new Date() });
+  res.send('MediConnect Backend is running. Visit /api/health for status.');
 });
 
 // Static files
