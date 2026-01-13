@@ -36,10 +36,17 @@ import errorHandler from './middleware/errorHandler.js';
 import rateLimiter from './middleware/rateLimit.js';
 
 const app = express();
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  'https://mediconnect25.vercel.app',
+  'http://localhost:3000',
+  'http://localhost:3001'
+].filter(Boolean);
+
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: [process.env.CLIENT_URL, 'http://localhost:3000', 'http://localhost:3001'],
+    origin: allowedOrigins,
     methods: ['GET', 'POST']
   }
 });
@@ -80,7 +87,7 @@ app.use(helmet({
   crossOriginResourcePolicy: { policy: "cross-origin" },
 }));
 app.use(cors({
-  origin: [process.env.CLIENT_URL, 'http://localhost:3000', 'http://localhost:3001'],
+  origin: allowedOrigins,
   credentials: true
 }));
 app.use(rateLimiter);
