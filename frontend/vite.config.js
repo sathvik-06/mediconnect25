@@ -17,6 +17,14 @@ export default defineConfig({
     build: {
         outDir: 'dist',
         sourcemap: true,
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+                    'socket-vendor': ['socket.io-client'],
+                },
+            },
+        },
     },
     esbuild: {
         loader: "jsx",
@@ -24,7 +32,6 @@ export default defineConfig({
         exclude: [],
     },
     optimizeDeps: {
-        exclude: ['events', 'util'],
         esbuildOptions: {
             loader: {
                 '.js': 'jsx',
@@ -34,12 +41,10 @@ export default defineConfig({
     resolve: {
         alias: {
             '@': '/src',
-            'events': 'events',
-            'util': 'util',
         },
     },
     define: {
-        'global': 'window',
+        'global': 'globalThis',
         'process.env': {},
     },
 });

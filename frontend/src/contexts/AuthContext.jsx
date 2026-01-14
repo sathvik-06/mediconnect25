@@ -10,11 +10,22 @@ const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('token'));
 
   useEffect(() => {
-    if (token) {
-      verifyToken();
-    } else {
-      setLoading(false);
-    }
+    const initAuth = async () => {
+      if (token) {
+        console.log('🔐 Verifying stored token...');
+        try {
+          await verifyToken();
+        } catch (error) {
+          console.warn('⚠️ Token verification failed:', error.message);
+          // Don't crash the app, just clear invalid token
+        }
+      } else {
+        console.log('ℹ️ No stored token found');
+        setLoading(false);
+      }
+    };
+
+    initAuth();
   }, [token]);
 
   const login = async (credentials) => {

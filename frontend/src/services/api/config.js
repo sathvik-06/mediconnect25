@@ -1,6 +1,12 @@
 // src/services/api/config.js
 const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
+// Debug logging for deployment troubleshooting
+console.log('🔧 API Configuration:');
+console.log('  - VITE_API_URL:', import.meta.env.VITE_API_URL || '(not set)');
+console.log('  - Using API Base URL:', API_BASE_URL);
+
+
 const api = {
   async request(url, options = {}) {
     const token = localStorage.getItem('token');
@@ -23,23 +29,39 @@ const api = {
       headers,
     };
 
-    const response = await fetch(`${API_BASE_URL}${url}`, config);
+    try {
+      const fullUrl = `${API_BASE_URL}${url}`;
+      console.log(`📡 API Request: ${options.method || 'GET'} ${fullUrl}`);
 
-    if (response.status === 401) {
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      window.location.href = '/login';
-      throw new Error('Authentication failed');
+      const response = await fetch(fullUrl, config);
+
+      if (response.status === 401) {
+        console.warn('🔒 Unauthorized - clearing session');
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        window.location.href = '/login';
+        throw new Error('Authentication failed');
+      }
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        const errorMessage = data.message || `API error: ${response.status}`;
+        console.error(`❌ API Error (${response.status}):`, errorMessage);
+        throw new Error(errorMessage);
+      }
+
+      console.log(`✅ API Success: ${options.method || 'GET'} ${url}`);
+      return data;
+    } catch (error) {
+      // Network errors or JSON parsing errors
+      if (error.name === 'TypeError' && error.message.includes('fetch')) {
+        console.error('🌐 Network Error: Cannot reach API server at', API_BASE_URL);
+        console.error('   Make sure VITE_API_URL is set correctly in Vercel');
+        throw new Error('Cannot connect to server. Please check your internet connection.');
+      }
+      throw error;
     }
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      const errorMessage = data.message || `API error: ${response.status}`;
-      throw new Error(errorMessage);
-    }
-
-    return data;
   },
 
   get(url) {
