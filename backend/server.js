@@ -40,28 +40,16 @@ const app = express();
 // Trust proxy for Railway/Cloud deployments
 app.set('trust proxy', 1);
 
-const allowedOrigins = [
-  process.env.CLIENT_URL,
-  'https://mediconnect25.vercel.app',
-  /https?:\/\/.*\.vercel\.app$/, // Allow any Vercel subdomain
-  'http://localhost:3000',
-  'http://localhost:3001'
-].filter(Boolean);
+// CORS Configuration - Permissive for troubleshooting
+const corsOptions = {
+  origin: true, // Reflects the request origin
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+};
 
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
-  cors: {
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.some(ao => (typeof ao === 'string' ? ao === origin : ao.test(origin)))) {
-        callback(null, true);
-      } else {
-        console.log('CORS Blocked Origin:', origin);
-        callback(null, true); // Temporarily true for deployment debugging
-      }
-    },
-    credentials: true,
-    methods: ['GET', 'POST']
-  }
+  cors: corsOptions
 });
 
 // Connect to databases
@@ -99,17 +87,7 @@ try {
 app.use(helmet({
   crossOriginResourcePolicy: { policy: "cross-origin" },
 }));
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.some(ao => (typeof ao === 'string' ? ao === origin : ao.test(origin)))) {
-      callback(null, true);
-    } else {
-      console.log('CORS Blocked Express:', origin);
-      callback(null, true); // Temporarily true for deployment debugging
-    }
-  },
-  credentials: true
-}));
+app.use(cors(corsOptions));
 app.use(rateLimiter);
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
