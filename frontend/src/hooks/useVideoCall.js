@@ -1,6 +1,9 @@
 // src/hooks/useVideoCall.js
+// TEMPORARILY DISABLED - simple-peer causing fetch polyfill errors
+// Will be re-enabled with peerjs implementation
+
 import { useEffect, useRef, useState } from 'react';
-import Peer from 'simple-peer';
+// import Peer from 'simple-peer';
 import { io } from 'socket.io-client';
 
 const ICE_SERVERS = {
@@ -15,13 +18,15 @@ const useVideoCall = (roomId, userId, onCallEnded) => {
     const [remoteStream, setRemoteStream] = useState(null);
     const [isMuted, setIsMuted] = useState(false);
     const [isVideoOff, setIsVideoOff] = useState(false);
-    const [isConnecting, setIsConnecting] = useState(true);
-    const [error, setError] = useState(null);
+    const [isConnecting, setIsConnecting] = useState(false); // Changed to false
+    const [error, setError] = useState('Video calls temporarily unavailable');
 
     const socketRef = useRef(null);
     const peerRef = useRef(null);
     const localStreamRef = useRef(null);
 
+    // Temporarily disabled - will be re-implemented with peerjs
+    /*
     useEffect(() => {
         if (!roomId || !userId) return;
 
@@ -133,57 +138,27 @@ const useVideoCall = (roomId, userId, onCallEnded) => {
 
         peerRef.current = peer;
     };
+    */
 
     const toggleMute = () => {
-        if (localStreamRef.current) {
-            const audioTrack = localStreamRef.current.getAudioTracks()[0];
-            if (audioTrack) {
-                audioTrack.enabled = !audioTrack.enabled;
-                setIsMuted(!audioTrack.enabled);
-            }
-        }
+        console.warn('Video calls temporarily disabled');
     };
 
     const toggleVideo = () => {
-        if (localStreamRef.current) {
-            const videoTrack = localStreamRef.current.getVideoTracks()[0];
-            if (videoTrack) {
-                videoTrack.enabled = !videoTrack.enabled;
-                setIsVideoOff(!videoTrack.enabled);
-            }
-        }
+        console.warn('Video calls temporarily disabled');
     };
 
     const endCall = () => {
-        if (socketRef.current) {
-            socketRef.current.emit('end-video-call', { roomId, userId });
-        }
-        cleanup();
+        console.warn('Video calls temporarily disabled');
         if (onCallEnded) onCallEnded();
     };
 
     const cleanupPeer = () => {
-        if (peerRef.current) {
-            peerRef.current.destroy();
-            peerRef.current = null;
-        }
-        setRemoteStream(null);
+        // Disabled
     };
 
     const cleanup = () => {
-        cleanupPeer();
-
-        if (localStreamRef.current) {
-            localStreamRef.current.getTracks().forEach(track => track.stop());
-            localStreamRef.current = null;
-            setLocalStream(null);
-        }
-
-        if (socketRef.current) {
-            socketRef.current.emit('leave-video-room', { roomId, userId });
-            socketRef.current.disconnect();
-            socketRef.current = null;
-        }
+        // Disabled
     };
 
     return {
