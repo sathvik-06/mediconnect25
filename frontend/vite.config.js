@@ -46,5 +46,6 @@ export default defineConfig({
     define: {
         'global': 'globalThis',
         'process.env': {},
+        '__BUILD_TIMESTAMP__': JSON.stringify(new Date().toISOString()),
     },
 });
