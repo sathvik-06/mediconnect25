@@ -9,7 +9,7 @@ const seedAdmin = async () => {
         await mongoose.connect(process.env.MONGODB_URI);
         console.log('Connected to MongoDB');
 
-        const adminEmail = 'admin@mediconnect.com';
+        const adminEmail = 'mediconnect111222325@gmail.com';
         const adminPassword = 'adminpassword123';
 
         // Check if admin exists and delete it to recreate
