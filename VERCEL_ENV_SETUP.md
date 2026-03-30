@@ -7,7 +7,7 @@ Add these in **Vercel Dashboard → Project Settings → Environment Variables**
 ### Required Variables
 
 ```
-VITE_API_URL=https://your-backend-url.railway.app/api
+VITE_API_URL=https://mediconnect25-2.onrender.com
 ```
 
 > **IMPORTANT:** 
@@ -60,8 +60,8 @@ After setting environment variables:
    ```
    🚀 MediConnect App Starting...
    🔧 API Configuration:
-     - VITE_API_URL: https://your-backend-url.railway.app/api
-     - Using API Base URL: https://your-backend-url.railway.app/api
+     - VITE_API_URL: https://mediconnect25-2.onrender.com
+     - Using API Base URL: https://mediconnect25-2.onrender.com
    ✅ Root element found, creating React root...
    ✅ React app mounted successfully
    ```
